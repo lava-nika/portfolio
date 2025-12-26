@@ -1,0 +1,32 @@
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+
+# Node modules (if you add build tools later)
+node_modules/
+package-lock.json
+
+# Build outputs (if applicable)
+dist/
+build/
+
+# Environment variables
+.env
+.env.local

@@ -1,0 +1,32 @@
+<!-- Google Analytics Setup Instructions -->
+
+<!-- 
+To add Google Analytics to your portfolio:
+
+1. Go to https://analytics.google.com/
+2. Create a new property for your website
+3. Get your Measurement ID (looks like G-XXXXXXXXXX)
+4. Replace 'G-XXXXXXXXXX' below with your actual Measurement ID
+5. Add this code snippet to the <head> section of ALL your HTML files
+   (index.html, projects.html, experience.html, hobbies.html, 404.html)
+   Right after the opening <head> tag
+
+-->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- 
+Alternative: If you prefer privacy-focused analytics, consider:
+- Plausible Analytics (https://plausible.io/)
+- Fathom Analytics (https://usefathom.com/)
+- Simple Analytics (https://simpleanalytics.com/)
+
+These are privacy-friendly alternatives that don't use cookies and respect user privacy.
+-->
