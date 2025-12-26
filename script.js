@@ -686,3 +686,86 @@ async function simulateFormSubmission(formData) {
         }, 1500);
     });
 }
+
+// ============================================
+// Flip Card Functionality for More Projects
+// ============================================
+
+// Initialize flip cards when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeFlipCards();
+});
+
+function initializeFlipCards() {
+    // Get all flip cards
+    const flipCards = document.querySelectorAll('.flip-card');
+    
+    flipCards.forEach(card => {
+        const viewDetailsBtn = card.querySelector('.view-details-btn');
+        const backBtn = card.querySelector('.back-btn');
+        
+        // Add click event to "View Details" button
+        if (viewDetailsBtn) {
+            viewDetailsBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                card.classList.add('flipped');
+                // Announce to screen readers
+                const cardTitle = card.querySelector('h3').textContent;
+                announceToScreenReader(`Showing details for ${cardTitle}`);
+            });
+        }
+        
+        // Add click event to "Back" button
+        if (backBtn) {
+            backBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                card.classList.remove('flipped');
+                // Announce to screen readers
+                const cardTitle = card.querySelector('h3').textContent;
+                announceToScreenReader(`Returning to summary view for ${cardTitle}`);
+            });
+        }
+        
+        // Add keyboard support
+        if (viewDetailsBtn) {
+            viewDetailsBtn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.classList.add('flipped');
+                    // Focus on back button after flip
+                    setTimeout(() => {
+                        backBtn?.focus();
+                    }, 600); // Wait for flip animation
+                }
+            });
+        }
+        
+        if (backBtn) {
+            backBtn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.classList.remove('flipped');
+                    // Focus on view details button after flip
+                    setTimeout(() => {
+                        viewDetailsBtn?.focus();
+                    }, 600); // Wait for flip animation
+                }
+            });
+        }
+    });
+}
+
+// Helper function to announce to screen readers
+function announceToScreenReader(message) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('role', 'status');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    document.body.appendChild(announcement);
+    
+    // Remove after announcement
+    setTimeout(() => {
+        document.body.removeChild(announcement);
+    }, 1000);
+}
