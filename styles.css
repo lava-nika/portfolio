@@ -9,27 +9,6 @@ html {
     overflow-x: hidden;
 }
 
-/* Skip to content link for accessibility */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--pastel-orange);
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    font-weight: 600;
-    z-index: 10000;
-    border-radius: 0 0 8px 0;
-    transition: top 0.3s ease;
-}
-
-.skip-link:focus {
-    top: 0;
-    outline: 3px solid var(--pastel-pink);
-    outline-offset: 2px;
-}
-
 :root {
     /* Main Colors */
     --primary-color: #1a1a1a;
