@@ -2749,6 +2749,28 @@ body.dark-mode .cta-section {
     flex-wrap: wrap;
 }
 
+/* Higher-contrast CTA buttons in light mode */
+body:not(.dark-mode) .cta-section .btn-primary {
+    background: #ffffff;
+    color: var(--primary-color);
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+body:not(.dark-mode) .cta-section .btn-primary:hover {
+    background: #f7f7f9;
+}
+
+body:not(.dark-mode) .cta-section .btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+body:not(.dark-mode) .cta-section .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
 /* Active Navigation Link */
 .nav-menu a.active {
     background: linear-gradient(135deg, var(--pastel-orange), var(--pastel-pink));
