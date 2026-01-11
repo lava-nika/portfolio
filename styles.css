@@ -752,6 +752,45 @@ body.dark-mode .project-description {
     z-index: 1;
 }
 
+/* Project Actions Container */
+.project-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.github-link {
+    flex-shrink: 0;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.github-link:hover {
+    opacity: 1;
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .github-link {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+body.dark-mode .github-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
 .project-card-back .project-title {
     color: white;
     margin-bottom: 32px;
@@ -2009,6 +2048,18 @@ body.dark-mode .contact-card {
         font-size: 22px;
     }
 
+    .project-actions,
+    .project-actions-small {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .github-link,
+    .github-link-small {
+        width: 36px;
+        height: 36px;
+    }
+
     .project-metrics {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -2403,7 +2454,7 @@ body.dark-mode .activity-item {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 32px;
 }
 
@@ -2472,6 +2523,45 @@ body.dark-mode .flip-card-back {
 
 .flip-card:hover .flip-card-front {
     box-shadow: var(--shadow-md);
+}
+
+/* Project Actions Container for More Projects */
+.project-actions-small {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.github-link-small {
+    flex-shrink: 0;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.github-link-small:hover {
+    opacity: 1;
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .github-link-small {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+body.dark-mode .github-link-small:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .view-details-btn,
