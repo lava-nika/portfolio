@@ -1437,6 +1437,26 @@ body.dark-mode .skill-tag:hover {
     margin: 0 auto;
 }
 
+/* Contact Icons */
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.github-icon-dark {
+    display: none;
+}
+
+body.dark-mode .github-icon-light {
+    display: none;
+}
+
+body.dark-mode .github-icon-dark {
+    display: inline;
+}
+
 /* Skills Section */
 .skills-section {
     padding: 120px 0;
