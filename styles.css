@@ -1291,6 +1291,17 @@ body.dark-mode .edu-item {
     margin-bottom: 0;
 }
 
+.edu-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.edu-header-content {
+    flex: 1;
+}
+
 .edu-item h4 {
     font-size: 20px;
     font-weight: 600;
